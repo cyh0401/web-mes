@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch, IndexRoute } from 'react-router-dom';
 import { PrivateRoute } from './_components';
 import { LoginPage } from './LoginPage';
 import { MESPage } from './MESPage';
@@ -15,8 +15,8 @@ class App extends Component {
       <Router history={history}>
         <div>
           <Switch>
-            <PrivateRoute exact path="/" component={MESPage} />
-            <Route path="/login" component={LoginPage} />
+            <Route exact path="/" component={LoginPage} />
+            <PrivateRoute Route path="/MES" component={MESPage} />
             <Route component={NoMatchPage} />
           </Switch>
         </div>

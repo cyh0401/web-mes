@@ -13,7 +13,7 @@ function login(username, password) {
             .then(
                 userInfo => {
                     dispatch(success(userInfo));
-                    history.push('/');
+                    history.push('/MES');
                 },
                 error => {
                     dispatch(failure(error.toString()));
